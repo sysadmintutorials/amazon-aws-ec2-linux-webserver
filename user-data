@@ -1,0 +1,12 @@
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<b>Your Internal IP Address is:</b> " >> index.html
+curl http://169.254.169.254/latest/meta-data/local-ipv4 >> index.html
+echo "<br><b> Your External IP Address is: </b>"$'\r' >> index.html
+curl http://169.254.169.254/latest/meta-data/public-ipv4 >> index.html
+echo "<br><b> Your DNS Address is: </b>"$'\r' >> index.html
+curl http://169.254.169.254/latest/meta-data/public-hostname >> index.html
