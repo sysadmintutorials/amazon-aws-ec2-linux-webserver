@@ -1,4 +1,4 @@
-# Creating NetApp LS-Mirrors with Ansible
+# Amazon AWS EC2 User-Data Script for Linux
 #### Date: 13/02/2020
 #### Version: 1
 #### Blog: www.sysadmintutorials.com
